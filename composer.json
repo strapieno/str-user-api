@@ -4,9 +4,6 @@
   "require": {
     "php": ">=5.5.0",
     "zendframework/zendframework": "~2.5",
-    "matryoshka-model/matryoshka": "0.8.*@dev",
-    "matryoshka-model/zf2-matryoshka-module": "0.8.*@dev",
-    "matryoshka-model/mongo-wrapper": "0.8.*@dev",
     "zfcampus/zf-apigility-provider": "~1.0",
     "zfcampus/zf-content-negotiation": "~1.0",
     "zfcampus/zf-content-validation": "~1.0",
@@ -16,7 +13,7 @@
     "zfcampus/zf-configuration": "~1.0",
     "zfcampus/zf-console": "~1.0",
     "strapieno/str-user-model" : "dev-develop",
-    "strapieno/str-model-utils" : "dev-develop"
+    "strapieno/str-model-utils": "dev-develop"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.7",
@@ -36,6 +33,10 @@
     {
       "type": "vcs",
       "url": "git@github.com:strapieno/str-user-model.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:strapieno/str-model-utils.git"
     }
   ],
   "authors": [
