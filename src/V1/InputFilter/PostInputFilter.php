@@ -1,11 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: visa
- * Date: 30/08/15
- * Time: 15.51
- */
+namespace Strapieno\User\Api\V1\InputFilter;
 
-class PostInputFilter {
+use Zend\InputFilter\InputFilter;
+
+/**
+ * Class PostInputFilter
+ */
+class PostInputFilter extends InputFilter
+{
 
 }
