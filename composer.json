@@ -13,6 +13,10 @@
     "zfcampus/zf-apigility-documentation": "~1.0",
     "zfcampus/zf-configuration": "~1.0",
     "zfcampus/zf-console": "~1.0",
+      "matryoshka-model/matryoshka": "0.8.*@dev",
+      "matryoshka-model/mongo-wrapper": "0.8.*@dev",
+      "matryoshka-model/matryoshka": "0.8.*@dev",
+      "matryoshka-model/zf2-matryoshka-module": "0.8.*@dev",
     "matryoshka-model/zf-apigility-matryoshka": "dev-develop",
     "strapieno/str-user-model" : "dev-develop",
     "strapieno/str-model-utils": "dev-develop"
@@ -32,6 +36,10 @@
     ]
   },
   "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:matryoshka-model/zf-apigility-matryoshka.git"
+    },
     {
       "type": "vcs",
       "url": "git@github.com:matryoshka-model/zf-apigility-matryoshka.git"
