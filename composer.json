@@ -13,6 +13,7 @@
     "zfcampus/zf-apigility-documentation": "~1.0",
     "zfcampus/zf-configuration": "~1.0",
     "zfcampus/zf-console": "~1.0",
+    "matryoshka-model/zf-apigility-matryoshka": "dev-develop",
     "strapieno/str-user-model" : "dev-develop",
     "strapieno/str-model-utils": "dev-develop"
   },
@@ -31,6 +32,10 @@
     ]
   },
   "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:matryoshka-model/zf-apigility-matryoshka.git"
+    },
     {
       "type": "vcs",
       "url": "git@github.com:strapieno/str-user-model.git"
