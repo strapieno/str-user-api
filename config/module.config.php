@@ -6,7 +6,7 @@ return [
             'api-rest' => [
                 'type' => 'Literal',
                 'options' => [
-                    'route' => 'rest'
+                    'route' => '/rest'
                 ],
                 'child_routes' => [
                     'user' => [
