@@ -2,13 +2,14 @@
 namespace Strapieno\User\Api;
 
 use Zend\ModuleManager\Feature\HydratorProviderInterface;
+use Zend\ModuleManager\Feature\InputFilterProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
 
 /**
  * Class Module
  */
-class Module implements HydratorProviderInterface
+class Module implements HydratorProviderInterface, InputFilterProviderInterface
 {
     /**
      * @return array
@@ -17,15 +18,6 @@ class Module implements HydratorProviderInterface
     {
         return include __DIR__ . '/config/module.config.php';
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getHydratorConfig()
-    {
-        return include __DIR__ . '/config/hydrator.config.php';
-    }
-
 
     /**
      * @return array
@@ -40,4 +32,23 @@ class Module implements HydratorProviderInterface
             ],
         ];
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHydratorConfig()
+    {
+        return include __DIR__ . '/config/hydrator.config.php';
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInputFilterConfig()
+    {
+        return include __DIR__ . '/config/input-filter.config.php';
+    }
+
+
 }
