@@ -13,7 +13,7 @@ return [
                         'type' => 'Segment',
                         'may_terminate' => true,
                         'options' => [
-                            'route' => '/user[/:user_id]'
+                            'route' => '/user[/:user_id]',
                             'defaults' => [
                                 'controller' => 'Strapieno\User\Api\V1\Rest\Controller'
                             ],

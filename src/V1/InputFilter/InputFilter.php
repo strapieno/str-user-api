@@ -24,7 +24,7 @@ class InputFilter extends ZendInputFilter
     {
         $input = new Input('user_name');
         // Filter
-        $filterManager = $this->getFactory()->getInputFilterManager();
+        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
 
         $this->add($input);
@@ -55,7 +55,7 @@ class InputFilter extends ZendInputFilter
     {
         $input = new Input('first_name');
         // Filter
-        $filterManager = $this->getFactory()->getInputFilterManager();
+        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
 
         $this->add($input);
@@ -69,7 +69,7 @@ class InputFilter extends ZendInputFilter
     {
         $input = new Input('last_name');
         // Filter
-        $filterManager = $this->getFactory()->getInputFilterManager();
+        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
 
         $this->add($input);
