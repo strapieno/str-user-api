@@ -15,7 +15,14 @@ class UserHydrator extends DateHystoryHydrator
      */
     public function __construct($underscoreSeparatedKeys = true)
     {
-        $this->addStrategy('date_created', new DateTimeStrategy);
         parent::__construct($underscoreSeparatedKeys);
+        // Strategy
+        $this->addStrategy('date_created', new DateTimeStrategy);
+        // Filter to ignore method
+        $this->filterComposite->addFilter(
+            'identity',
+            new MethodMatchFilter('getIdentity', true),
+            FilterComposite::CONDITION_AND
+        );
     }
 }
