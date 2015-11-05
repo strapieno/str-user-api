@@ -26,5 +26,11 @@ class UserHydrator extends DateHystoryHydrator
             new MethodMatchFilter('getIdentity', true),
             FilterComposite::CONDITION_AND
         );
+
+        $this->filterComposite->addFilter(
+            'roleId',
+            new MethodMatchFilter('getRoleId', true),
+            FilterComposite::CONDITION_AND
+        );
     }
 }
