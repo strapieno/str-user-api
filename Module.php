@@ -41,7 +41,6 @@ class Module implements HydratorProviderInterface, InputFilterProviderInterface
         return include __DIR__ . '/config/hydrator.config.php';
     }
 
-
     /**
      * {@inheritdoc}
      */
@@ -49,6 +48,4 @@ class Module implements HydratorProviderInterface, InputFilterProviderInterface
     {
         return include __DIR__ . '/config/input-filter.config.php';
     }
-
-
 }

@@ -28,10 +28,10 @@ return [
     ],
     'matryoshka-apigility' => [
         'matryoshka-connected' => [
-            'Strapieno\User\Api\V1\Rest\ConnectedResource' => [
+                'Strapieno\User\Api\V1\Rest\ConnectedResource' => [
                 'model' => 'Strapieno\User\Model\UserModelService',
                 'collection_criteria' => 'Strapieno\User\Model\Criteria\UserCollectionCriteria',
-                'entity_criteria' => 'Strapieno\User\Model\Criteria\NotIsolatedActiveRecordCriteria'
+                'entity_criteria' => 'Strapieno\User\Criteria\NotIsolatedActiveRecordCriteria'
             ]
         ]
     ],
