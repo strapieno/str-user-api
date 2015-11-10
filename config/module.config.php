@@ -31,7 +31,7 @@ return [
                 'Strapieno\User\Api\V1\Rest\ConnectedResource' => [
                 'model' => 'Strapieno\User\Model\UserModelService',
                 'collection_criteria' => 'Strapieno\User\Model\Criteria\UserCollectionCriteria',
-                'entity_criteria' => 'Strapieno\User\Criteria\NotIsolatedActiveRecordCriteria'
+                'entity_criteria' => 'Strapieno\Model\Criteria\NotIsolatedActiveRecordCriteria'
             ]
         ]
     ],
