@@ -12,9 +12,11 @@ class InputFilter extends ZendInputFilter
     public function init()
     {
         $this->addUserNameInput()
-            ->addUEmailInput()
-            ->addUFirstNameInput()
-            ->addULastNameInput();
+            ->addEmailInput()
+            ->addFirstNameInput()
+            ->addLastNameInput()
+            ->addBirthDate()
+        ;
     }
 
     /**
@@ -34,7 +36,7 @@ class InputFilter extends ZendInputFilter
     /**
      * @return $this
      */
-    protected function addUEmailInput()
+    protected function addEmailInput()
     {
         $input = new Input('email');
         // Filter
@@ -51,9 +53,10 @@ class InputFilter extends ZendInputFilter
     /**
      * @return $this
      */
-    protected function addUFirstNameInput()
+    protected function addFirstNameInput()
     {
         $input = new Input('first_name');
+        $input->setRequired(false);
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
@@ -65,9 +68,25 @@ class InputFilter extends ZendInputFilter
     /**
      * @return $this
      */
-    protected function addULastNameInput()
+    protected function addLastNameInput()
     {
         $input = new Input('last_name');
+        $input->setRequired(false);
+        // Filter
+        $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
+        $input->getFilterChain()->attach($filterManager->get('stringtrim'));
+
+        $this->add($input);
+        return $this;
+    }
+
+    /**
+     * @return $this
+     */
+    protected function addBirthDate()
+    {
+        $input = new Input('birth_date');
+        $input->setRequired(false);
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
