@@ -28,7 +28,9 @@ class InputFilter extends ZendInputFilter
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
-
+        // Validator
+        $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
+        $input->getValidatorChain()->attach($validatorManager->get('user-usernamealreadyexist'));
         $this->add($input);
         return $this;
     }
@@ -45,6 +47,7 @@ class InputFilter extends ZendInputFilter
         // Validator
         $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
         $input->getValidatorChain()->attach($validatorManager->get('emailaddress'));
+        $input->getValidatorChain()->attach($validatorManager->get('user-emailalreadyexist'));
 
         $this->add($input);
         return $this;
