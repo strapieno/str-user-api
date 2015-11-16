@@ -42,7 +42,7 @@ class InputFilter extends ZendInputFilter
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
-
+        // Validator
         $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
         $input->getValidatorChain()->attach($validatorManager->get('emailaddress'));
 
@@ -90,6 +90,9 @@ class InputFilter extends ZendInputFilter
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));
+        // Validator
+        $validatorManager = $this->getFactory()->getDefaultValidatorChain()->getPluginManager();
+        $input->getValidatorChain()->attach($validatorManager->get('date'));
 
         $this->add($input);
         return $this;
