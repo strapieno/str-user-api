@@ -20,6 +20,7 @@ class PostInputFilter extends InputFilter
     protected function addPasswordInput()
     {
         $input = new Input('password');
+        $input->setRequired(true);
         // Filter
         $filterManager = $this->getFactory()->getDefaultFilterChain()->getPluginManager();
         $input->getFilterChain()->attach($filterManager->get('stringtrim'));

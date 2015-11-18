@@ -90,7 +90,8 @@ return [
     ],
     'zf-content-validation' => [
         'Strapieno\User\Api\V1\Rest\Controller' => [
-            'input_filter' => 'UserInputFilter'
+            'input_filter' => 'UserInputFilter',
+            'POST' => 'UserPostInputFilter'
         ]
     ]
 ];
