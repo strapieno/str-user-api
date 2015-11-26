@@ -41,5 +41,15 @@ class UserHydrator extends DateHystoryHydrator
             new MethodMatchFilter('getState', true),
             FilterComposite::CONDITION_AND
         );
+        $this->filterComposite->addFilter(
+            'RecoverPasswordToken',
+            new MethodMatchFilter('getRecoverPasswordToken', true),
+            FilterComposite::CONDITION_AND
+        );
+        $this->filterComposite->addFilter(
+            'identityExistToken',
+            new MethodMatchFilter('getIdentityExistToken', true),
+            FilterComposite::CONDITION_AND
+        );
     }
 }
