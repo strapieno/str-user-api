@@ -1,5 +1,4 @@
 <?php
-
 namespace Strapieno\User\Api\V1\Hydrator;
 
 use Matryoshka\Model\Hydrator\Strategy\DateTimeStrategy;
