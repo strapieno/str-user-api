@@ -90,8 +90,44 @@ return [
     ],
     'zf-content-validation' => [
         'Strapieno\User\Api\V1\Rest\Controller' => [
-            'input_filter' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
-            'POST' => 'Strapieno\User\Model\InputFilter\CreateInputFilter'
+            'input_filter' => 'Strapieno\User\Api\InputFilter\DefaultInputFilter',
+            'POST' => 'Strapieno\User\Api\InputFilter\PostInputFilter'
+        ]
+    ],
+    'input_filter_specs' => [
+        'Strapieno\User\Api\InputFilter\DefaultInputFilter' => [
+            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
+            'user_name' => [
+                'name' => 'user_name',
+                'require' => true,
+                'allow_empty' => false
+            ],
+            'email' => [
+                'name' => 'user_name',
+                'require' => true,
+                'allow_empty' => false
+            ],
+        ],
+        'Strapieno\User\Api\InputFilter\PostInputFilter' => [
+            'merge' => 'Strapieno\User\Api\InputFilter\DefaultInputFilter',
+            'user_name' => [
+                'name' => 'user_name',
+                'validators' => [
+                    'userusernamealreadyexist' => [
+                        'name' => 'userusernamealreadyexist',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
+            ],
+            'email' => [
+                'name' => 'user_name',
+                'validators' => [
+                    'userusernamealreadyexist' => [
+                        'name' => 'userusernamealreadyexist',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
+            ],
         ]
     ]
 ];
