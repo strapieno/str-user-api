@@ -26,11 +26,6 @@ class UserHydrator extends DateHystoryHydrator
             FilterComposite::CONDITION_AND
         );
         $this->filterComposite->addFilter(
-            'roleId',
-            new MethodMatchFilter('getRoleId', true),
-            FilterComposite::CONDITION_AND
-        );
-        $this->filterComposite->addFilter(
             'passwordCrypt',
             new MethodMatchFilter('getPasswordCrypt', true),
             FilterComposite::CONDITION_AND
