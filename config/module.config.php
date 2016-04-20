@@ -94,7 +94,7 @@ return [
             'POST' => 'Strapieno\User\Api\InputFilter\PostInputFilter'
         ]
     ],
-    'input_filter_specs' => [
+    'strapieno_input_filter_specs' => [
         'Strapieno\User\Api\InputFilter\DefaultInputFilter' => [
             'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
             'user_name' => [
