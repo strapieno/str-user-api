@@ -95,11 +95,17 @@ return [
         ]
     ],
     'strapieno_input_filter_specs' => [
-        'Strapieno\User\Api\InputFilter\PostInputFilter' => [
-            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
+        'Strapieno\User\Api\InputFilter\DefaultInputFilter' => [
+            'email' => [
+                'name' => 'email',
+                'validators' => [
+                    'userusernamealreadyexist' => [
+                        'name' => 'userusernamealreadyexist',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
+            ],
             'user_name' => [
-                'require' => true,
-                'allow_empty' => false,
                 'name' => 'user_name',
                 'validators' => [
                     'userusernamealreadyexist' => [
@@ -108,16 +114,17 @@ return [
                     ]
                 ]
             ],
+        ],
+        'Strapieno\User\Api\InputFilter\PostInputFilter' => [
+            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
+            'user_name' => [
+                'require' => true,
+                'allow_empty' => false,
+            ],
             'email' => [
                 'require' => true,
                 'allow_empty' => false,
-                'name' => 'user_name',
-                'validators' => [
-                    'userusernamealreadyexist' => [
-                        'name' => 'userusernamealreadyexist',
-                        'break_chain_on_failure' => true
-                    ]
-                ]
+                'name' => 'email',
             ],
             'password' => [
                 'name' => 'password',
