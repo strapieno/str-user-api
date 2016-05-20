@@ -96,6 +96,7 @@ return [
     ],
     'strapieno_input_filter_specs' => [
         'Strapieno\User\Api\InputFilter\DefaultInputFilter' => [
+            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
             'email' => [
                 'name' => 'email',
                 'validators' => [
