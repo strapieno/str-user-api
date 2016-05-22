@@ -40,7 +40,7 @@ class Module implements HydratorProviderInterface
     public function onBootstrap(MvcEvent $e)
     {
         $events = $e->getApplication()->getEventManager();
-        // TODO make to config
+        // TODO recover from configuration
         $listenerManager = $e->getApplication()->getServiceManager()->get('listenerManager');
         $events->attach($listenerManager->get('Strapieno\User\Api\V1\Listener\NotFoundListener'));
     }
