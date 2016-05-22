@@ -1,6 +1,11 @@
 <?php
 
 return [
+    'service-listeners' => [
+        'invokables' => [
+            'Strapieno\User\Api\V1\Listener\NotFoundListener' => 'Strapieno\User\Api\V1\Listener\NotFoundListener'
+        ]
+    ],
     'router' => [
         'routes' => [
             'api-rest' => [
