@@ -3,6 +3,7 @@ namespace Strapieno\User\Api;
 
 use Zend\ModuleManager\Feature\HydratorProviderInterface;
 use Zend\ModuleManager\Feature\InputFilterProviderInterface;
+use Zend\Mvc\MvcEvent;
 use Zend\Stdlib\ArrayUtils;
 
 
@@ -31,6 +32,17 @@ class Module implements HydratorProviderInterface
                 ],
             ],
         ];
+    }
+
+    /**
+     * @param MvcEvent $e
+     */
+    public function onBootstrap(MvcEvent $e)
+    {
+        $events = $e->getApplication()->getEventManager();
+        // TODO make to config
+        $listenerManager = $e->getApplication()->getServiceManager()->get('listenerManager');
+        $events->attach($listenerManager->get('Strapieno\User\Api\V1\Listener\NotFoundListener'));
     }
 
     /**
