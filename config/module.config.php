@@ -96,47 +96,52 @@ return [
     'zf-content-validation' => [
         'Strapieno\User\Api\V1\Rest\Controller' => [
             'input_filter' => 'Strapieno\User\Api\InputFilter\DefaultInputFilter',
-            'POST' => 'Strapieno\User\Api\InputFilter\PostInputFilter'
+            'POST' => 'Strapieno\User\Api\InputFilter\PostInputFilter',
+            'PATCH' => 'Strapieno\User\Api\InputFilter\PatchInputFilter'
         ]
     ],
     'strapieno_input_filter_specs' => [
-        'Strapieno\User\Api\InputFilter\DefaultInputFilter' => [
-            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
-            'email' => [
-                'name' => 'email',
-                'validators' => [
-                    'userusernamealreadyexist' => [
-                        'name' => 'userusernamealreadyexist',
-                        'break_chain_on_failure' => true
-                    ]
-                ]
-            ],
-            'user_name' => [
-                'name' => 'user_name',
-                'validators' => [
-                    'userusernamealreadyexist' => [
-                        'name' => 'userusernamealreadyexist',
-                        'break_chain_on_failure' => true
-                    ]
-                ]
-            ],
-        ],
         'Strapieno\User\Api\InputFilter\PostInputFilter' => [
             'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
             'user_name' => [
                 'require' => true,
                 'allow_empty' => false,
             ],
+
             'email' => [
                 'require' => true,
                 'allow_empty' => false,
                 'name' => 'email',
+                'validators' => [
+                    'user-emailunique' => [
+                        'name' => 'user-emailunique',
+                        'break_chain_on_failure' => true
+                    ]
+                ]
             ],
             'password' => [
                 'name' => 'password',
                 'require' => true,
                 'allow_empty' => false
             ],
+        ],
+        'Strapieno\User\Api\InputFilter\PatchInputFilter' => [
+            'merge' => 'Strapieno\User\Model\InputFilter\DefaultInputFilter',
+            'email' => [
+                'require' => true,
+                'allow_empty' => false,
+                'name' => 'email',
+                'validators' => [
+                    'user-emailunique' => [
+                        'name' => 'user-emailunique',
+                        'break_chain_on_failure' => true,
+                        'options' => [
+                            'excludeValue' => false
+                        ]
+                    ]
+                ]
+            ],
+
         ]
     ]
 ];
